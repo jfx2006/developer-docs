@@ -82,7 +82,7 @@ Say you have been working on feature A using the bookmark `feature-A` as describ
 
    that comes _before_ your changesets for feature A.
 
-   For example if you see "changeset:   26858:4a2e39cfc820",
+   For example if you see "changeset: 26858:4a2e39cfc820",
 
    you can copy either the "26858" or the "4a2e39cfc820" to identify this changeset.
 

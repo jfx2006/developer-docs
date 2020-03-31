@@ -25,10 +25,10 @@ During installation make sure the following workloads are checked:
 
 ### MAPI Headers
 
-Messaging Application Programming Interface \(**MAPI**\) is an API for Microsoft Windows ****which allows programs to become email-aware and the libraries that enable this are required to build Thunderbird on Windows. 
+Messaging Application Programming Interface \(**MAPI**\) is an API for Microsoft Windows _\*\*_which allows programs to become email-aware and the libraries that enable this are required to build Thunderbird on Windows.
 
 {% hint style="info" %}
-You can get the MAPI header files from: [https://www.microsoft.com/en-us/download/details.aspx?id=12905](https://www.microsoft.com/en-us/download/details.aspx?id=12905) 
+You can get the MAPI header files from: [https://www.microsoft.com/en-us/download/details.aspx?id=12905](https://www.microsoft.com/en-us/download/details.aspx?id=12905)
 {% endhint %}
 
 Copy 17 of the 18 header files to a Windows SDK include directory so that the build process will find the files, that is `C:\Program Files (x86)\Windows Kits\10\Include\10.0.nnnnn.0\shared`, where `nnnnn` is the highest number present on the system. Note that the downloaded Outlook 2010 MAPI Header Files contain 18 fies, of which only 17 are needed. Do **not** copy MAPI.h, it is already in C:\Program Files \(x86\)\Windows Kits\10\Include\10.0.17134.0\um\MAPI.h.
@@ -57,10 +57,10 @@ As of April 2019, 10.0.17134.0 is needed to compile Thunderbird. Assuming standa
 
 ### MozillaBuild Package
 
- Finally, download the [MozillaBuild Package](https://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe) from Mozilla. Accept the default settings, in particular the default installation directory: `c:\mozilla-build\`. On some versions of Windows an error dialog will give you the option to ‘reinstall with the correct settings’ - you should agree and proceed.
+Finally, download the [MozillaBuild Package](https://ftp.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/MozillaBuildSetup-Latest.exe) from Mozilla. Accept the default settings, in particular the default installation directory: `c:\mozilla-build\`. On some versions of Windows an error dialog will give you the option to ‘reinstall with the correct settings’ - you should agree and proceed.
 
 {% hint style="info" %}
- Once this is done, creating a shortcut to `c:\mozilla-build\start-shell.bat` on your desktop will make your life easier.
+Once this is done, creating a shortcut to `c:\mozilla-build\start-shell.bat` on your desktop will make your life easier.
 {% endhint %}
 
 {% hint style="success" %}

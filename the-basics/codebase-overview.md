@@ -71,8 +71,5 @@ SeaMonkey specific source code.
 Files needed for Thunderbird's build infrastructure.
 
 **testing**  
-Files needed for Thunderbird's test infrastructure.  
-****
-
-
+Files needed for Thunderbird's test infrastructure.
 

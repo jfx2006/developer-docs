@@ -64,7 +64,7 @@ The `legacy` key enables Thunderbird’s legacy support, for bootstrap extension
 The URL for icons must no longer be full chrome URLs as before, but relative URLs and the entry point \(in the example above it is`content`\) must be defined in `chrome.manifest`.
 {% endhint %}
 
-The shown example also specifies an optional `options` key to define the options page. The key `open_in_tab`  is optional and defaults to a value of`false`. If your old RDF manifest included an `em:optionsType` of 3, you can set `open_in_tab` to `true`, to have your options opened again in a new tab instead of a new window.
+The shown example also specifies an optional `options` key to define the options page. The key `open_in_tab` is optional and defaults to a value of`false`. If your old RDF manifest included an `em:optionsType` of 3, you can set `open_in_tab` to `true`, to have your options opened again in a new tab instead of a new window.
 
 {% hint style="info" %}
 This example is only in English. You probably want to use translated strings in your manifest. Read [this MDN article about it](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Internationalization#Internationalizing_manifest.json). Unfortunately that means you now need two sets of translated strings, one \(that you already have\) for your extension and another for the manifest.
@@ -134,12 +134,12 @@ var WindowListener = {
 
   loadIntoWindowAfterWindowIsReady(window) {
     console.log("load (2/2): " + window.document.readyState);
-    
+
     // Check if the opened window is the one we want to modify.
     if (window.document.documentElement
                  .getAttribute("windowtype") === "mail:3pane") {
       let document = window.document;
-  
+
       // Take any steps to add UI or anything to the window
       // document.getElementById() etc. will work here.        
     }    
@@ -168,7 +168,6 @@ var WindowListener = {
   onWindowTitleChange(xulWindow, newTitle) {
   },
 };
-
 ```
 {% endcode %}
 

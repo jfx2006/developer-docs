@@ -11,7 +11,7 @@ It typically consists of two files, zipped up with a .xpi extension just as any 
 * manifest.json
 * image.png or .jpg
 
-### Use a manifest.json file
+## Use a manifest.json file
 
 You must prepare a JSON manifest, named "manifest.json" just as with other Web Extensions. Below is a basic example:
 
@@ -46,7 +46,7 @@ You must prepare a JSON manifest, named "manifest.json" just as with other Web E
 Although not required by Firefox, Thunderbird requires an `applications` object with an id set for the add-on! Because we don't sign add-ons, themes will not install without it.
 {% endhint %}
 
-### Additional color properties
+## Additional color properties
 
 Although the above theme will work as-is, there are other properties which can be added.
 
@@ -82,7 +82,7 @@ For the `colors` object, there are many options. Those known to work are listed 
 * toolbar\_bottom\_separator
 * toolbar\_vertical\_separator
 
-### Icons
+## Icons
 
 You can add an icon for your theme, like other types of add-ons, with the following code:
 
@@ -94,7 +94,7 @@ You can add an icon for your theme, like other types of add-ons, with the follow
 
 Don't forget to put the `icon.png` file in your add-on as well.
 
-### A complete example
+## A complete example
 
 Here is a `manifest.json` from a Theme that uses all the above features, thanks to Paenglab:
 

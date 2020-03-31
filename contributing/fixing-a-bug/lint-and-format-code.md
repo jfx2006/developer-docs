@@ -11,7 +11,7 @@ Thunderbird's source code is linted and formatted using automated tools, which p
 * catching problems that might otherwise go unnoticed
 * making it easier for developers to write well-formatted code
 
-Mozlint is a library that standardizes linter configuration and provides an interface for running all linters at once. It's is designed to be consumed by things like mach and taskcluster.
+Mozlint is a library that standardizes linter configuration and provides an interface for running all linters at once. It's is designed to be consumed by things like mach and Taskcluster.
 
 For JavaScript code we use both:
 
@@ -20,9 +20,9 @@ For JavaScript code we use both:
 
 These tools can be used via the command line or right in your code editor.
 
-## Configuring mach (optional)
+## Configuring mach \(optional\)
 
-`mach lint`is the command line interface to Mozlint. To use the Thunderbird linter configurations, add the hidden option `--config-path` when running.
+`mach lint`is the command line interface to Mozlint. To use the Thunderbird lint configurations, add the hidden option `--config-path` when running.
 
 ```text
 $ ./mach lint --config-path=comm/tools/lint path/to/file.js
@@ -38,12 +38,12 @@ So you don't have to remember the extra option, you can set up an alias in your 
 [alias]
 commlint = lint --config-path=comm/tools/lint
 ```
+
 Now `mach commlint` is the same as running `mach lint --config-path=comm/tools/lint`. See [mach settings](https://firefox-source-docs.mozilla.org/mach/settings.html) for more details.
 
 ### Suite code
 
-The mozlint configuration files in `comm/tools/lint` are written so that they can be shared with the Seamonkey project. Thunderbird developers may want to set `MOZLINT_NO_SUITE=1` in their environment so `mach lint` will not check `comm/suite/` or `comm/editor`. Taskcluster will also set `MOZLINT_NO_SUITE` when running lint checks.
-
+The Mozlint configuration files in `comm/tools/lint` are written so that they can be shared with the Seamonkey project. Thunderbird developers may want to set `MOZLINT_NO_SUITE=1` in their environment so `mach lint` will not check `comm/suite/` or `comm/editor`. Taskcluster will also set `MOZLINT_NO_SUITE` when running lint checks.
 
 ## Using the Command Line
 

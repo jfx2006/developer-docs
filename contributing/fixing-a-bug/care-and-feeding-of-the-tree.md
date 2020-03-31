@@ -63,7 +63,7 @@ The most likely cause of an unexpected failure is a change to mozilla-central. S
 ![](../../.gitbook/assets/build-details.svg.png)
 
 You can then view the mozilla-central pushlog by copying the revisions into the URL:  
-https://hg.mozilla.org/mozilla-central/pushloghtml?fromchange=**\[good revision\]**&tochange=**\[bad revision\]**
+[https://hg.mozilla.org/mozilla-central/pushloghtml?fromchange=\*\*\[good](https://hg.mozilla.org/mozilla-central/pushloghtml?fromchange=**[good) revision\]**&tochange=**\[bad revision\]\*\*
 
 From there it's a matter of finding the most likely candidates and figuring out if they are the cause of the problem. In many cases there's a change that needs to be copied into comm-central.
 
@@ -84,6 +84,4 @@ To disable a test, add the appropriate `skip-if` notation to the test manifest. 
 #### Backout
 
 If it looks like a Thunderbird developer is responsible for causing a problem, contact them or their reviewer. If neither can be found and there's a serious failure, consider backing out their changes. Check whether you're right first – finding out your work has been backed out overnight is not the nicest way to start a day.
-
-
 
