@@ -11,6 +11,8 @@ Thunderbird's source code is linted and formatted using automated tools, which p
 * catching problems that might otherwise go unnoticed
 * making it easier for developers to write well-formatted code
 
+Mozlint is a library that standardizes linter configuration and provides an interface for running all linters at once. It's is designed to be consumed by things like mach and taskcluster.
+
 For JavaScript code we use both:
 
 * [eslint](https://eslint.org/) - linting tool
@@ -18,7 +20,32 @@ For JavaScript code we use both:
 
 These tools can be used via the command line or right in your code editor.
 
-## Via the Command Line
+## Configuring mach (optional)
+
+`mach lint`is the command line interface to Mozlint. To use the Thunderbird linter configurations, add the hidden option `--config-path` when running.
+
+```text
+$ ./mach lint --config-path=comm/tools/lint path/to/file.js
+```
+
+The path given to `--config-path` is relative to the mozilla-central source.
+
+### Add an alias to mach
+
+So you don't have to remember the extra option, you can set up an alias in your `~/.mozbuild/machrc` file.
+
+```text
+[alias]
+commlint = lint --config-path=comm/tools/lint
+```
+Now `mach commlint` is the same as running `mach lint --config-path=comm/tools/lint`. See [mach settings](https://firefox-source-docs.mozilla.org/mach/settings.html) for more details.
+
+### Suite code
+
+The mozlint configuration files in `comm/tools/lint` are written so that they can be shared with the Seamonkey project. Thunderbird developers may want to set `MOZLINT_NO_SUITE=1` in their environment so `mach lint` will not check `comm/suite/` or `comm/editor`. Taskcluster will also set `MOZLINT_NO_SUITE` when running lint checks.
+
+
+## Using the Command Line
 
 After editing some JavaScript code, navigate to the `comm/` directory. \(The following commands need to be run from the `comm/` directory so that Prettier will use the `comm/.prettierignore` file, and not the `.prettierignore` file in the directory just above `comm/`. See [Prettier issue 4081](https://github.com/prettier/prettier/issues/4081).\)
 
@@ -59,11 +86,17 @@ Some of us on the Thunderbird team use the VS Code editor with these plugins:
 
   VS Code plugin by Dirk Baeumer
 
+## Via Taskcluster \(In progress\)
+
+Work is progressing on running mozlint-based checks on Taskcluster. For now, the checks are only running on try-comm-central as many of them are failing. As they are "greened-up" they will be added to comm-central.
+
 ## Via Mercurial Hooks \(Not Currently Set Up\)
 
 Mercurial has hooks that could be used to automatically check for linting and formatting issues, say when you make a commit.
 
 _Note that we do not currently have this set up for the Thunderbird code base. Initial attempts to use these hooks \(as they are used for Firefox code\) have not succeeded._
+
+**This should be possible now with the recent addition of the --config-path parameter.**
 
 ## More Details
 
