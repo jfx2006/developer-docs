@@ -18,9 +18,9 @@ uname -m
 
 if this command returns `x86_64` you can proceed.
 
-## Python 2.7
+## Python 3.6 and Python 2.7
 
-You’ll need `Python 2.7` installed, `Python 3.x` is currently not supported.
+You'll need `Python 3.6 or higher` installed to build Thunderbird. `Python 2.7` is needed for some unittests still.
 
 You can check with `python --version` to see if you have it already. If not, you can install it with your distribution’s package manager. Make sure your system is up to date!
 
@@ -40,10 +40,11 @@ You will be asked to choose from the following list of options
 
 ```text
 Please choose the version of Firefox you want to build:
-  1. Firefox for Desktop Artifact Mode
+  1. Firefox for Desktop Artifact Mode [default]
   2. Firefox for Desktop
   3. GeckoView/Firefox for Android Artifact Mode
   4. GeckoView/Firefox for Android
+  5. SpiderMonkey JavaScript engine
 ```
 
 Please choose option 2 to proceed with a successful build.
@@ -72,6 +73,10 @@ export PATH=$HOME/.cargo/bin:$PATH
 
 {% hint style="warning" %}
 If you still are unable to find rustc and cargo via the ˋwhichˋ command after installing them, you may need to restart your session \(log out and back into your user account, or restart your computer\) to be able to see them.
+{% endhint %}
+
+{% hint style="info" %}
+The minimum versions of Clang, CBindgen, and other build tools installed by `mach bootstrap` are updated regularly. You can always get the latest versions by running `mach bootstrap --no-system-changes`.
 {% endhint %}
 
 ## You're all set
